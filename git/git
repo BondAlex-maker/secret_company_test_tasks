@@ -1,0 +1,37 @@
+ 
+cd ~/.ssh проверяем ssh ключ
+ ключа нет
+ вводим команду sh-keygen -t rsa -b 4096 -C "your_mail@example.com"
+ Указываем тот адрес электронной почты, который вводили при регистрации на GitHub.
+ 
+ Далее нужно указать расположение файла для сохранения ключа. Если вы не введёте путь до файла и просто нажмёте Enter, ключ сохранится в файле, указанном в скобках.
+Теперь нужно установить пароль к вашему ключу и дважды ввести его. Если вы не хотите вводить пароль каждый раз, когда используете ключ, пропустите этот шаг, нажав «Enter», и ничего не вводите.
+
+Добавляем ключ в ssh-agent (сгенерированный или уже существующий). Проверяем доступность ключа командой eval "$(ssh-agent -s)" и добавляем с помощью ssh-add ~/.ssh/your_key_name, где указываем верный путь до файла с приватным ключом и его имя.
+вводим пароль, 
+Identity added: /home/kigabit/.ssh/bondarenko.alex.sergeevich@gmail.com (your_mail@example.com)
+
+получаем публичный ключ с помощью команды 
+cat ~/.ssh/bondarenko.alex.sergeevich@gmail.com.pub
+
+заходим в гитхаб для работы с ключами 
+https://github.com/settings/keys
+
+Нажимаем кнопку New SSH key (новый SSH-ключ). Вводим имя ключа (можно придумать абсолютно любое) в поле Title (название), а в Key (ключ) вставляем сам ключ из буфера обмена. Теперь нажимаем Add SSH key (добавить SSH-ключ).
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDFUUXW8J05sUq1/F6WUYWCo5rMAJt3vbY+sahznC8t2gnA/eJcFNL177DDKEXUsuTJ685lXWCdBv8p9EWcosrJFe/7ndtnuJV/B1ELrOuWleqPHYLYLin+YRqneDT5bsbhgpSKnTTT6o36y0/Oj+rtRd8RLRtvzJux6iHqdawyD8KOBs+F5Ftw9M1UNUtOs1gQsCfsh4iVRCUPa5JgvaNEVZjJ38NJGac/vrhUXrxqrxneQc6fZx/RMiWyuBJR93oySwU8gNJigagep51fckWVLLmTzDvjEdUHgcQO1kCfa6EyMyRmnCw/T3/HbxG5mQ40BfEVAMIaoVE1+CVusXkNS98WGkA/WiiwzamqoORMBVp7QWyH2nXgF75zoGtyYISQdhKqsc8H8TvrM2aFwBMQYrjNCLpxXgzwNlteaS0QkVaa8+TDh+i3/XU4ELZ+s3glDMhTUHvLh5dQOMKKhr9gnJby8yWloOHvl/mntwhn2Ft/s9MxK3BdO6H1M9g9kb2tFOJ/c8D9IjhVXor30a2CCHJuOA/xxUNGaqFovB3v2RB2FODE2wZ11xNAnS42Xmp94XmP5LC7c0ngA1g6UsGAJMt55lZydds8xCh3e0r3DYih3CMtDYi3GkJTwxf7ahADcLzpzfbjUz3cXKraOXgjh0SiAQYJ8JFp25JjbOZhGw== your_mail@example.com
+ 
+поменял почту на свою, ключ добавлен.
+git clone git@github.com:_your-nickname_/_your-project_.git folder_name
+клонирую проект в нужную папку
+ git branch смотрим ветки в репозитории
+git checkout dev
+ переходим в ветку dev 
+ 
+создаем файл touch Readme.md 
+nano Readme.md вошли в редактор
+### May be in future записали
+вышли с сохранением
+gid add . добавляем все изменения в файлах и новые файлы (у нас он один Readme.md)
+git commit -m "Add file Readme.md" создаем коммит в ветке dev c коротким сообщением благодаря флагу -m
+git push origin dev пушим изменения в репозиторий

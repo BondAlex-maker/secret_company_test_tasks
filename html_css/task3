@@ -1,0 +1,103 @@
+css1.1 container {
+    min-height: 10em;
+    display: table-cell;
+    width: 20%
+    vertical-align: middle }
+    
+sass 1.2 container 
+        display:flex
+        justify-content: center
+        
+    container.div 
+        width:20%
+        box-sizing: borderbox
+        
+css 1.3 container{
+            margin: 0 auto;
+            width : 100%;
+            height: 100vh;
+            }
+        container.div{
+            width: 20%;} 
+            
+            (как-то так)
+2.1 
+<div class="fixed-overlay">
+    <div class="modal">
+        <div class="modal_container">    
+        </div>
+    </div>
+</div>
+
+
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal_container {
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+}
+
+3.
+button:active {  (псевдокласс active)
+  color: green;
+}
+button[disabled]{ (псевдокласс disabled)
+color: gray;
+}
+button.danger{ (просто назначаемый класс изменяемый в состоянии)
+color: red;
+}
+
+4.
+html :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<form action="action_page.php" method="post">
+
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="submit" style="position: absolute; left: -9999px"/>
+    </div>
+
+</form>
+</body>
+</html>
+
+css:
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
